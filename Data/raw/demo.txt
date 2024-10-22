@@ -1,0 +1,1 @@
+Paste all your NetCDF files in this folder
