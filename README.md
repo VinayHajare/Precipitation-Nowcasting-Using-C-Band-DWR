@@ -148,7 +148,7 @@ Here's an example of loading, processing, and training the model with the provid
 
 ### 📝 Acknowledgments
 
-This project was developed as part of the ISRO Hackathon. The radar data is sourced from the **Thumba Equatorial Rocket Launching Station (TERLS)**, with support from **Space Applications Centre, ISRO**.
+This project was developed as part of the research on Climate & Weather. The radar data is sourced from the **Thumba Equatorial Rocket Launching Station (TERLS)**, with support from **Space Applications Centre, ISRO**.
 
 ---
 
