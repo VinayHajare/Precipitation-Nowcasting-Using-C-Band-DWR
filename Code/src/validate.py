@@ -54,51 +54,6 @@ def calculate_validation_metrics(y_true, y_pred):
         'vel_mae': vel_mae
     }
 
-def plot_prediction_examples(val_generator, model, num_examples=5):
-    """
-    Plot example predictions compared to ground truth
-    
-    Args:
-        val_generator: Validation data generator
-        model: Trained model
-        num_examples: Number of examples to plot
-    """
-    # Get some validation samples
-    for i in range(num_examples):
-        X, y_true = val_generator[i]
-        y_pred = model.predict(X)
-        
-        # Plot for the last timestep
-        fig, axes = plt.subplots(2, 2, figsize=(15, 15))
-        
-        # Plot DBZ
-        true_dbz = denormalize_radar_data(y_true[0, -1, 40, :, :, 0], 'DBZ')  # Middle height level
-        pred_dbz = denormalize_radar_data(y_pred[0, -1, 40, :, :, 0], 'DBZ')
-        
-        im1 = axes[0, 0].imshow(true_dbz, cmap='rainbow')
-        axes[0, 0].set_title('True DBZ')
-        plt.colorbar(im1, ax=axes[0, 0])
-        
-        im2 = axes[0, 1].imshow(pred_dbz, cmap='rainbow')
-        axes[0, 1].set_title('Predicted DBZ')
-        plt.colorbar(im2, ax=axes[0, 1])
-        
-        # Plot VEL
-        true_vel = denormalize_radar_data(y_true[0, -1, 40, :, :, 1], 'VEL')
-        pred_vel = denormalize_radar_data(y_pred[0, -1, 40, :, :, 1], 'VEL')
-        
-        im3 = axes[1, 0].imshow(true_vel, cmap='rainbow')
-        axes[1, 0].set_title('True VEL')
-        plt.colorbar(im3, ax=axes[1, 0])
-        
-        im4 = axes[1, 1].imshow(pred_vel, cmap='rainbow')
-        axes[1, 1].set_title('Predicted VEL')
-        plt.colorbar(im4, ax=axes[1, 1])
-        
-        plt.tight_layout()
-        plt.savefig(os.path.join(OUTPUT_DIR, f'prediction_example_{i}.png'))
-        plt.close()
-
 def main():
     # Load validation data using the generator
     val_data_file = os.path.join(OUTPUT_DIR, 'val_data.npz')
@@ -147,11 +102,7 @@ def main():
     print(f"DBZ - POD: {avg_metrics['dbz_pod']:.4f}")
     print(f"VEL - MAE: {avg_metrics['vel_mae']:.4f} m/s")
     
-    # Plot some example predictions
-    print("\nGenerating prediction visualizations...")
-    plot_prediction_examples(val_generator, model)
-    
-    print("\nValidation complete. Results and visualizations saved to output directory.")
+    print("\nValidation complete.")
 
 if __name__ == "__main__":
     main()
