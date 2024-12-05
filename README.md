@@ -19,6 +19,7 @@ This project utilizes deep learning to **nowcast precipitation** over the next h
   - `utils.py`: Utility functions for data normalization, denormalization, and metrics.
   - `dataset.py`: A custom dataset class to handle huge high-dimensional Radar data.
   - `custom_validation_callback.py`: A custom training callback to evalute model on Radar specific metrics.
+  - `inference.py`: A inference pipeline to nowcast precipitation for next half-hour.
 - **Notebooks**: For exploratory data analysis, visualization, and data inspections.
 - **README.md**: Project documentation.
 
