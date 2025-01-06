@@ -147,6 +147,13 @@ Here's an example of loading, processing, and training the model with the provid
 
 ---
 
+### 🧪 Experiment Details  
+- **Dataset Exploration**: [Colab Notebook](https://colab.research.google.com/drive/1EwoU-USLKZXwiiPYaW2egujmtlEj3aTO?usp=sharing) Explore dataset in detail  
+- **Experiment 1**: [Colab Notebook](https://colab.research.google.com/drive/1c7bvmk2RuB69dAkWswy6g5vTzGm4z6qh?usp=sharing) Using 1 Day data with 4 x Downsampling  
+- **Experiment 2**: [Colab Notebook](https://colab.research.google.com/drive/1cEu54tKr6EaKIvFzCwVf5OGZpNxWSC5s?usp=sharing) Using 2 Day data with 4 x Downsampling  
+
+---
+
 ### 📝 Acknowledgments
 
 This project was developed as part of the research on Climate & Weather. The radar data is sourced from the **Thumba Equatorial Rocket Launching Station (TERLS)**, with support from **Space Applications Centre, ISRO**.
